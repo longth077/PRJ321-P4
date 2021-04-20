@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.geometry.Insets?>
+<BorderPane
+        prefHeight="490" prefWidth="500"
+        fx:id="mainPanel"
+        fx:controller="com.ClientChatController"
+        xmlns:fx="http://javafx.com/fxml" style="-fx-font-size:14px;">
+    <padding>
+        <Insets top="5" bottom="5" right="5" left="5"/>
+    </padding>
+    <center>
+        <AnchorPane prefWidth="500" prefHeight="400">
+            <children>
+                <TextArea fx:id="txtContent" prefWidth="460" prefHeight="330" layoutX="8" layoutY="1"
+                          AnchorPane.bottomAnchor="10" AnchorPane.topAnchor="5"/>
+            </children>
+        </AnchorPane>
+    </center>
+
+    <top>
+        <GridPane  vgap="10" prefWidth="500">
+            <children>
+                <FlowPane hgap="8" prefWidth="500">
+                    <children>
+                        <Label text="HostIP"/>
+                        <TextField fx:id="txtHostIP" text="127.0.0.1" prefWidth="180"/>
+                        <Label text="Port"/>
+                        <TextField fx:id="txtPort" text="1234" prefWidth="180"/>
+                    </children>
+                </FlowPane>
+                <FlowPane hgap="8"  GridPane.rowIndex="1" prefWidth="160">
+                    <children>
+                        <Label text="Username" />
+                        <TextField fx:id="txtUserName" text="Ha" />
+                        <Button fx:id="btnConnect" text="Connect" onAction="#btnConnectActionPerformed"/>
+                    </children>
+                </FlowPane>
+            </children>
+        </GridPane>
+    </top>
+    <bottom>
+        <FlowPane hgap="10">
+            <padding>
+                <Insets bottom="30"/>
+            </padding>
+            <children>
+                <TextField fx:id="txtMessage" prefHeight="27" prefWidth="360" />
+                <Button fx:id="btnSend" mnemonicParsing="false" text="Send" onAction="#btnSendActionPerformed" />
+            </children>
+        </FlowPane>
+    </bottom>
+</BorderPane>
